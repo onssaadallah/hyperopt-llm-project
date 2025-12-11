@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: hyperopt-llm-project
+Version: 0.1.0
+Summary: Hyperparameter Optimization with LLMs, BO, MLflow
+Requires-Python: >=3.10
+Requires-Dist: transformers>=4.35.0
+Requires-Dist: huggingface_hub>=0.19.0
+Requires-Dist: accelerate>=0.24.0
+Requires-Dist: numpy>=1.26.0
+Requires-Dist: pandas>=2.1.0
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: torch>=2.1.0
+Requires-Dist: matplotlib>=3.8
+Requires-Dist: seaborn>=0.13.0
+Requires-Dist: plotly>=5.18.0
+Requires-Dist: optuna>=3.4.0
+Requires-Dist: scikit-optimize>=0.10.1
+Requires-Dist: mlflow>=2.10.0
+Requires-Dist: langchain>=0.1.0
+Requires-Dist: langchain-openai>=0.1.0
+Requires-Dist: langchain-community>=0.1.0
+Requires-Dist: streamlit>=1.30.0
+Requires-Dist: pyyaml>=6.0

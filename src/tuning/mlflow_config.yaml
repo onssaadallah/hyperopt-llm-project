@@ -1,0 +1,4 @@
+tracking_uri: "./mlruns"
+experiment_bo: "bayesian_optimization"
+experiment_llm: "llm_hpo"
+

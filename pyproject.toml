@@ -5,12 +5,10 @@ description = "Hyperparameter Optimization with LLMs, BO, MLflow"
 requires-python = ">=3.10"
 
 dependencies = [
-    # LLM + Transformers
     "transformers>=4.35.0",
     "huggingface_hub>=0.19.0",
     "accelerate>=0.24.0",
 
-    # ML + Data
     "numpy>=1.26.0",
     "pandas>=2.1.0",
     "scikit-learn>=1.3",
@@ -19,28 +17,27 @@ dependencies = [
     "seaborn>=0.13.0",
     "plotly>=5.18.0",
 
-    # HPO
     "optuna>=3.4.0",
     "scikit-optimize>=0.10.1",
 
-    # MLflow
     "mlflow>=2.10.0",
 
-    # LangChain
     "langchain>=0.1.0",
     "langchain-openai>=0.1.0",
     "langchain-community>=0.1.0",
 
-    # Web UI
     "streamlit>=1.30.0",
 
-    # Utils
     "pyyaml>=6.0",
 ]
 
-[tool.uv]  # If you are using UV package manager
+[tool.uv]
 dev-dependencies = [
     "pytest",
     "ruff",
     "black",
 ]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
