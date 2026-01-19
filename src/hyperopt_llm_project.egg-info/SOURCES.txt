@@ -1,7 +1,6 @@
 README.md
 pyproject.toml
 src/__init__.py
-src/app/streamlit_app.py
 src/data/data_cleaning.py
 src/data/data_preprocessing.py
 src/data/utils_data.py
