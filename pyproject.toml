@@ -17,7 +17,7 @@ dependencies = [
     "matplotlib>=3.8",
     "seaborn>=0.13.0",
     "plotly>=5.18.0",
-
+     
     "optuna>=3.4.0",
     "scikit-optimize>=0.10.1",
 
