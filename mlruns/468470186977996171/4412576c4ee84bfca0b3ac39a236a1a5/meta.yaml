@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/mlruns/468470186977996171/4412576c4ee84bfca0b3ac39a236a1a5/artifacts
+end_time: 1768967474311
+entry_point_name: ''
+experiment_id: '468470186977996171'
+lifecycle_stage: active
+run_id: 4412576c4ee84bfca0b3ac39a236a1a5
+run_name: Bi-LSTM_Bayesian_Optimization_trial_2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1768967110001
+status: 3
+tags: []
+user_id: user

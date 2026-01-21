@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/mlruns/113837886381510581/1f17774e66cd4f60ab6f198ae46d191d/artifacts
+end_time: 1768966187481
+entry_point_name: ''
+experiment_id: '113837886381510581'
+lifecycle_stage: active
+run_id: 1f17774e66cd4f60ab6f198ae46d191d
+run_name: Bi-LSTM
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1768966166023
+status: 3
+tags: []
+user_id: user
