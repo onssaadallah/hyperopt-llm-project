@@ -26,7 +26,10 @@ dependencies = [
     "langchain==0.1.15",        # pinned for consistency
     "streamlit>=1.30.0",
 
-    "pyyaml>=6.0"
+    "pyyaml>=6.0",
+    # ✅ Added
+    "ollama>=0.1.7",
+    "statsmodels>=0.14.0"
 ]
 
 [tool.uv]

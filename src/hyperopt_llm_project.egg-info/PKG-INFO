@@ -19,3 +19,5 @@ Requires-Dist: mlflow>=2.10.0
 Requires-Dist: langchain==0.1.15
 Requires-Dist: streamlit>=1.30.0
 Requires-Dist: pyyaml>=6.0
+Requires-Dist: ollama>=0.1.7
+Requires-Dist: statsmodels>=0.14.0
