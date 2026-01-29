@@ -37,7 +37,6 @@ dependencies = [
 [tool.uv]
 dev-dependencies = [
     "pytest",
-    "ruff",
     "black"
 ]
 
