@@ -6,34 +6,42 @@ import mlflow
 import time 
 import sys 
 from pathlib import Path 
-sys.path.insert(0,r"C:Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/src")
+sys.path.insert(
+    0, r"C:\Users\user.IBRAHIM-IK-SZHE\hyperopt-llm-project\src"
+)
+
 from data.data_preprocessing import  DataPreprocessing
 from models.model import BiLSTMForecast
 from pipelines.forecasting_pipeline import ForecastingPipeline
 
 class BayesianOptimization:
-
-    def __init__(self, clean_train, clean_test, target_cols,
-                 model_name="Bi-LSTM",
-                 experiment_name="Bayesian_Optimization"):
-
+    def __init__(
+        self,
+        clean_train,
+        clean_test,
+        target_cols,
+        mlflow_uri,
+        model_name="Bi-LSTM",
+        experiment_name="Bayesian_Optimization",):
         self.clean_train = clean_train
         self.clean_test = clean_test
         self.target_cols = target_cols
         self.experiment_name = experiment_name
         self.model_name = model_name
+        self.mlflow_uri = mlflow_uri
 
         self.pipeline = ForecastingPipeline(
             clean_train=clean_train,
             clean_test=clean_test,
             target_cols=target_cols,
-            experiment_name=experiment_name
+            experiment_name=experiment_name,
+            mlflow_uri=mlflow_uri,
         )
 
         self.study = optuna.create_study(
-            direction="minimize",
-            pruner=optuna.pruners.MedianPruner(n_startup_trials=5)
-        )
+                direction="minimize",
+                pruner=optuna.pruners.MedianPruner(n_startup_trials=5)
+            )
 
     def objective(self, trial):
 

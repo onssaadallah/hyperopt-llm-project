@@ -16,7 +16,7 @@ sys.modules["langchain.chains"] = MagicMock()
 # but ignoring that for now as we run from root.
 from src.meta_HPO.LLM_Load import load_llm, _ollama_installed, _ollama_model_exists
 from src.meta_HPO.meta_knowledge_building import MetaKnowledgeBuilder
-from src.meta_HPO.meta_llm_tuning import LLMTuning
+from src.tuning.meta_llm_tuning import LLMTuning
 
 # --- LLM_Load Tests ---
 
@@ -93,9 +93,9 @@ def test_aggregate_and_regime(mock_path, mock_mlflow):
 
 # --- LLMTuning Tests ---
 
-@patch("src.meta_HPO.meta_llm_tuning.load_llm")
-@patch("src.meta_HPO.meta_llm_tuning.ForecastingPipeline")
-@patch("src.meta_HPO.meta_llm_tuning.LLMChain")
+@patch("src.tuning.meta_llm_tuning.load_llm")
+@patch("src.tuning.meta_llm_tuning.ForecastingPipeline")
+@patch("src.tuning.meta_llm_tuning.LLMChain")
 def test_llmtuning_initialization(mock_llmchain, mock_pipeline, mock_load_llm):
     tuner = LLMTuning(
         model_name="Bi-LSTM", 
@@ -103,6 +103,7 @@ def test_llmtuning_initialization(mock_llmchain, mock_pipeline, mock_load_llm):
         clean_train=pd.DataFrame(), 
         clean_test=pd.DataFrame(),
         target_cols=["t1"], 
+        mlflow_uri="file:///tmp/mlruns", # Added missing arg
         llm_name="dummy", 
         model_description="desc"
     )
@@ -112,9 +113,9 @@ def test_llmtuning_initialization(mock_llmchain, mock_pipeline, mock_load_llm):
     mock_llmchain.assert_called_once()
     assert tuner.experiment_name == "test_exp"
 
-@patch("src.meta_HPO.meta_llm_tuning.load_llm")
-@patch("src.meta_HPO.meta_llm_tuning.ForecastingPipeline")
-@patch("src.meta_HPO.meta_llm_tuning.LLMChain")
+@patch("src.tuning.meta_llm_tuning.load_llm")
+@patch("src.tuning.meta_llm_tuning.ForecastingPipeline")
+@patch("src.tuning.meta_llm_tuning.LLMChain")
 def test_extract_params_and_reasoning(mock_llmchain, mock_pipeline, mock_load_llm):
     tuner = LLMTuning(
         model_name="Bi-LSTM", 
@@ -122,6 +123,7 @@ def test_extract_params_and_reasoning(mock_llmchain, mock_pipeline, mock_load_ll
         clean_train=pd.DataFrame(), 
         clean_test=pd.DataFrame(),
         target_cols=["t1"], 
+        mlflow_uri="file:///tmp/mlruns", # Added missing arg
         llm_name="dummy", 
         model_description="desc"
     )

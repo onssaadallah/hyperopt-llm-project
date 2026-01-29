@@ -29,7 +29,9 @@ dependencies = [
     "pyyaml>=6.0",
     # ✅ Added
     "ollama>=0.1.7",
-    "statsmodels>=0.14.0"
+    "statsmodels>=0.14.0",
+    "nbformat",
+    "kaleido"
 ]
 
 [tool.uv]

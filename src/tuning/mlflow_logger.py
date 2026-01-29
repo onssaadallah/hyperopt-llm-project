@@ -5,7 +5,7 @@ import yaml
 class MLflowLogger:
     """MLflow logger for experiments."""
     
-    def __init__(self, config_path="src/config/mlflow_config.yaml"):
+    def __init__(self, config_path="src/tuning/mlflow_config.yaml"):
         with open(config_path, "r") as f:
             config = yaml.safe_load(f)
 

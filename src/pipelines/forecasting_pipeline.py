@@ -7,30 +7,22 @@ import numpy as np
 import pandas as pd
 import torch
 import mlflow
+from pathlib import Path
 from sklearn.preprocessing import MinMaxScaler
-sys.path.insert(0, r"C:/Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/src")
-from data.data_preprocessing import DataPreprocessing
-from models.model import BiLSTMForecast
-from models.training import Trainer
-import os
-import time
-import json
-import random
-import numpy as np
-import pandas as pd
-import torch
-import mlflow
-from sklearn.preprocessing import MinMaxScaler
-from data.data_preprocessing import DataPreprocessing
-from models.training import Trainer
-from models.model import BiLSTMForecast
 
+# Determine project root dynamically
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.append(str(ROOT_DIR / "src"))
+
+from data.data_preprocessing import DataPreprocessing
+from models.model import BiLSTMForecast
+from models.training import Trainer
 
 # -------- MLflow path --------
-MLFLOW_PATH = "file:///C:/Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/mlruns"
+MLFLOW_PATH = os.getenv("MLFLOW_TRACKING_URI", "file:///" + str(ROOT_DIR / "mlruns"))
 
 # ---- Results folder path ----
-SAVE_DIR = "C:/Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/results/data_results"
+SAVE_DIR = ROOT_DIR / "results" / "data_results"
 
 class ForecastingPipeline:
     def __init__(
@@ -111,7 +103,7 @@ class ForecastingPipeline:
     # Run experiment
     # ------------------------------------------------------------------
     def run(self, model_name: str, params: dict, run_suffix: str = None):
-        run_name = f"{model_name}_{run_suffix}" if run_suffix else model_name
+        run_name = f"{run_suffix}" if run_suffix else model_name
 
         with mlflow.start_run(run_name=run_name):
             mlflow.log_params(params)

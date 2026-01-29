@@ -4,7 +4,10 @@ import pandas as pd
 import numpy as np
 from pathlib  import Path
 import sys
-sys.path.insert(0,r"C:Users/user.IBRAHIM-IK-SZHE/Meta_LLM_HPO/hyperopt-llm-project/src")
+sys.path.insert(
+    0, r"C:\Users\user.IBRAHIM-IK-SZHE\hyperopt-llm-project\src"
+)
+
 from data.data_cleaning  import CleanData
 from data.data_preprocessing import DataPreprocessing
 from models.model import BiLSTMForecast

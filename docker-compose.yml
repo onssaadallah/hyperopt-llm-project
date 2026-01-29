@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: hyperopt_project
+    volumes:
+      - .:/app
+    environment:
+      - MLFLOW_TRACKING_URI=file:///app/mlruns
+    command: tail -f /dev/null
