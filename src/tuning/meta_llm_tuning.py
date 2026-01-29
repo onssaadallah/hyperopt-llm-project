@@ -2,7 +2,6 @@ import os
 import sys
 from pathlib import Path
 
-# Fix Windows path (missing backslashes)
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from data.data_cleaning import CleanData

@@ -73,13 +73,11 @@ name_model = "Bi-LSTM"
 experiment_name ="base_forecasting_Model"
 
 # define ForecastingPipeline
-# Create Base Forecasting Model 
-#--------------------------
- #Define Forecasting Pipeline
-#--------------------------
+# --------------------------
+# Define Forecasting Pipeline
+# --------------------------
 name_model = "Bi-LSTM"
-experiment_name ="base_forecasting_Model"
-
+experiment_name = "base_forecasting_Model"
 # define ForecastingPipeline
 pipeline = ForecastingPipeline(
     clean_train=clean_train,
