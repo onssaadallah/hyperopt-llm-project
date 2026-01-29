@@ -3,9 +3,7 @@ import sys
 from pathlib import Path
 
 # Fix Windows path (missing backslashes)
-sys.path.insert(
-    0, r"C:\Users\user.IBRAHIM-IK-SZHE\hyperopt-llm-project\src"
-)
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from data.data_cleaning import CleanData
 from data.data_preprocessing import DataPreprocessing
@@ -148,7 +146,9 @@ class LLMTuning:
             "meta_feature_reasoning": reasoning,
         }
 
-    def record_trials(self,params,rmse,reasoning,llm_name,base_dir=r"C:/Users/user.IBRAHIM-IK-SZHE/hyperopt-llm-project/data/LLM_trials_memory"):
+    def record_trials(self,params,rmse,reasoning,llm_name,base_dir=None):
+        if base_dir is None:
+            base_dir = Path(__file__).resolve().parent.parent.parent / "data" / "LLM_trials_memory"
         record = {
             "params": params,
             "rmse": rmse,

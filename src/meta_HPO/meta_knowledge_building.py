@@ -9,7 +9,8 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from sklearn.linear_model import LinearRegression
 
 
-MLFLOW_PATH = "file:///C:/Users/user.IBRAHIM-IK-SZHE/hyperopt-llm-project/mlruns"
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+MLFLOW_PATH = "file:///" + str(ROOT_DIR / "mlruns").replace("\\", "/")
 mlflow.set_tracking_uri(MLFLOW_PATH)
 
 
@@ -19,9 +20,7 @@ class MetaKnowledgeBuilder:
         self.experiment_name = experiment_name
         self.target_cols = target_cols
 
-        self.meta_dir = Path(
-            "C:/Users/user.IBRAHIM-IK-SZHE/hyperopt-llm-project/data/meta_data"
-        )
+        self.meta_dir = ROOT_DIR / "data" / "meta_data"
         self.meta_dir.mkdir(parents=True, exist_ok=True)
 
     # ----------------------------------------------

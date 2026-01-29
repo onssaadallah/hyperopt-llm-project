@@ -6,9 +6,7 @@ import mlflow
 import time 
 import sys 
 from pathlib import Path 
-sys.path.insert(
-    0, r"C:\Users\user.IBRAHIM-IK-SZHE\hyperopt-llm-project\src"
-)
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from data.data_preprocessing import  DataPreprocessing
 from models.model import BiLSTMForecast
