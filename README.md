@@ -58,7 +58,7 @@ cd hyperopt-llm-project
 
 If you use this code or find it helpful, please refer to our paper:
 
-**LLM-AutoOpt: Large Language Model Guided Hyperparameter Optimization for Time-Series Forecasting**
+**A Meta-Knowledge–Augmented LLM Framework for Hyperparameter Optimization in Time-Series Forecasting**
 
 👉 https://arxiv.org/pdf/2602.01445
 
